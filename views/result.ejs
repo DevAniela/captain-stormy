@@ -1,0 +1,36 @@
+<!-- Display the weather forecast result -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>☔ Captain Stormy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Rain forecast fer <%= city %></h1>
+      <% if (willRain) { %>
+      <p>☔ Hoist the umbrellas, we've got a storm brewin' in <%= city %>!</p>
+      <% } else { %>
+      <p>
+        🦜 Arrr! Looks like ye can leave yer umbrella behind in <%= city %>.
+        Smooth sailin' ahead!
+      </p>
+      <% } %>
+      <a href="/">Come about! Back to search, matey!</a>
+    </div>
+  </body>
+</html>
