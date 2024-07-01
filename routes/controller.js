@@ -10,18 +10,21 @@ export async function getCoordinates(city) {
     const response = await axios.get(geocodeURL);
     const data = response.data;
 
+    // Check if the API returned any results
     if (data.length === 0) {
       throw new Error("City not found");
     }
 
     const { lat, lon } = data[0];
 
+    // Check if lat and lon are valid numbers
     if (!lat || !lon || isNaN(lat) || isNaN(lon)) {
       throw new Error("Invalid coordinates received");
     }
 
     return { latitude: lat, longitude: lon };
   } catch (error) {
+    console.error("Error fetching coordinates:", error.message);
     throw new Error("Error fetching coordinates");
   }
 }

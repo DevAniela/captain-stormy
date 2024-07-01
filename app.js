@@ -75,7 +75,7 @@ app.get("/", (req, res) => {
 app.get("/weather", async (req, res) => {
   const city = req.query.city;
 
-  // Check if the input length is reasonable (e.g., at least 2 characters)
+  // Check if the input length is reasonable (e.g., at least 2 characters) and that it contains only valid characters
   if (city.length < 2) {
     return res.render("index.ejs", {
       error:
@@ -101,7 +101,7 @@ app.get("/weather", async (req, res) => {
 
 // Listen on the predefined port and start the server
 app.listen(port, () => {
-  console.log(`Server is runing on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
 
 // Push the project to GitHub
